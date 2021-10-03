@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: no.alb.dat250.expass4.rest.AppTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.355 s - in no.alb.dat250.expass4.rest.AppTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.483 sec
