@@ -8,24 +8,16 @@ import static spark.Spark.post;
 import static spark.Spark.delete;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.mongodb.*;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.FindIterable;
-import com.mongodb.client.model.Projections;
-import com.mongodb.client.model.Filters;
 import static com.mongodb.client.model.Filters.*;
-import static com.mongodb.client.model.Projections.*;
-import com.mongodb.client.model.Sorts;
 import com.mongodb.client.result.DeleteResult;
 import com.mongodb.client.result.InsertOneResult;
 import com.mongodb.client.result.UpdateResult;
 
-import java.util.ArrayList;
-import java.util.function.Consumer;
 import org.bson.Document;
 import org.bson.types.ObjectId;
 
@@ -49,7 +41,7 @@ public class App {
         MongoDatabase database = mongoClient.getDatabase("todo");
         MongoCollection<Document> collection = database.getCollection("todos");
 
-        post("/todo", (req, res) -> {
+        post("/todos", (req, res) -> {
 
             try {
                 Gson gson = new Gson();
@@ -93,7 +85,7 @@ public class App {
             }
         });
 
-        get("/todo/:id", (req, res) -> {
+        get("/todos/:id", (req, res) -> {
 
             try {
 
@@ -110,7 +102,7 @@ public class App {
             }
         });
 
-        put("/todo/:id", (req, res) -> {
+        put("/todos/:id", (req, res) -> {
             try {
 
                 Gson gson = new Gson();
@@ -139,7 +131,7 @@ public class App {
             }
         });
 
-        delete("/todo/:id", (req, res) -> {
+        delete("/todos/:id", (req, res) -> {
             try {
 
                 String id = req.params("id");
